@@ -1,0 +1,74 @@
+$text-align-props: (
+  "text-center": center,
+  "text-justify": justify,
+  "text-left": start,
+  "text-right": end
+);
+
+$text-decoration-props: (
+  "text-underline": underline,
+  "text-through": line-through,
+  "text-no-dec": none
+);
+
+$text-transform-props: (
+  "text-lower": lowercase,
+  "text-upper": uppercase,
+  "text-cap": capitalize
+);
+
+$white-space-props: (
+  "text-normal": normal,
+  "text-nowrap": nowrap
+);
+
+$font-weight-props: (
+  "f-light": 300,
+  "f-normal": 400,
+  "f-medium": 500,
+  "f-semibold": 600,
+  "f-bold": 700,
+  "f-semiblack": 800,
+  "f-black": 900
+);
+
+$font-style-props: (
+  "f-italic": italic
+);
+
+$font-size-props: (
+  "f-xs": .75rem,
+  "f-sm": .875rem,
+  "f-md": 1rem,
+  "f-lg": 1.125rem,
+  "f-xl": 1.25rem,
+  "f-2xl": 1.5rem,
+  "f-3xl": 1.75rem,
+  "f-4xl": 2rem,
+  "f-5xl": 2.5rem,
+  "f-6xl": 3rem,
+  "f-7xl": 4rem,
+  "f-8xl": 6rem
+);
+@for $i from 6 to 65 {
+  $font-size-props: map-merge($font-size-props, (
+    'f-#{$i}px': #{$i}px
+  ));
+}
+
+
+$line-height-props: (
+  'line-height-1': 1,
+  'line-height-2': 1.25,
+  'line-height-3': 1.5,
+  'line-height-4': 2
+);
+
+@include style-class('text-align', $text-align-props, true);
+@include style-class('text-decoration', $text-decoration-props);
+@include style-class('text-transform', $text-transform-props);
+@include style-class('font-weight', $font-weight-props, true);
+@include style-class('font-style', $font-style-props);
+@include style-class('font-size', $font-size-props, true);
+@include style-class('line-height', $line-height-props);
+@include style-class('white-space', $white-space-props);

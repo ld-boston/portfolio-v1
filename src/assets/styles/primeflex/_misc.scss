@@ -1,0 +1,144 @@
+// opacity
+$opacity-props: (
+  'op-0': '0',
+  'op-10': '.1',
+  'op-20': '.2',
+  'op-30': '.3',
+  'op-40': '.4',
+  'op-50': '.5',
+  'op-60': '.6',
+  'op-70': '.7',
+  'op-80': '.8',
+  'op-90': '.9',
+  'op-100': '1',
+);
+@include style-class('opacity', $opacity-props);
+
+// z-index
+$zindex-props: (
+  'z-auto': 'auto',
+  'z-0': 0,
+  'z-1': 1,
+  'z-2': 2,
+  'z-3': 3,
+  'z-4': 4,
+  'z-5': 5,
+);
+@include style-class('z-index', $zindex-props, true);
+
+// image
+$repeat-props: (
+  'bg-repeat': 'repeat',
+  'bg-no-repeat': 'no-repeat',
+  'bg-repeat-x': 'repeat-x',
+  'bg-repeat-y': 'repeat-y',
+  'bg-repeat-round': 'round',
+  'bg-repeat-space': 'space',
+);
+
+$size-props: (
+  'bg-auto': 'auto',
+  'bg-cover': 'cover',
+  'bg-contain': 'contain',
+);
+
+$position-props: (
+  'bg-bottom': 'bottom',
+  'bg-center': 'center',
+  'bg-left': 'left',
+  'bg-left-bottom': 'left bottom',
+  'bg-left-top': 'left top',
+  'bg-right': 'right',
+  'bg-right-bottom': 'right bottom',
+  'bg-right-top': 'right top',
+  'bg-top': 'top',
+);
+
+@include style-class('background-repeat', $repeat-props, true);
+@include style-class('background-size', $size-props, true);
+@include style-class('background-position', $position-props, true);
+
+// overflow
+$overflow-props: (
+  'overflow-auto': 'auto',
+  'overflow-hidden': 'hidden',
+  'overflow-visible': 'visible',
+  'overflow-scroll': 'scroll',
+);
+
+$overflow-x-props: (
+  'overflow-x-auto': 'auto',
+  'overflow-x-hidden': 'hidden',
+  'overflow-x-visible': 'visible',
+  'overflow-x-scroll': 'scroll',
+);
+
+$overflow-y-props: (
+  'overflow-y-auto': 'auto',
+  'overflow-y-hidden': 'hidden',
+  'overflow-y-visible': 'visible',
+  'overflow-y-scroll': 'scroll',
+);
+
+@include style-class('overflow', $overflow-props, true);
+@include style-class('overflow-x', $overflow-x-props, true);
+@include style-class('overflow-y', $overflow-y-props, true);
+
+// list style
+$list-style-props: (
+  'list-none': 'none',
+  'list-disc': 'disc',
+  'list-decimal': 'decimal',
+);
+@include style-class('list-style', $list-style-props);
+
+// other
+$appearance-props: (
+  'appearance-none': none,
+);
+
+$outline-props: (
+  'outline-none': none,
+);
+
+$pointer-events-props: (
+  'pointer-events-none': none,
+  'pointer-events-auto': auto,
+);
+
+$cursor-props: (
+  'cursor-auto': 'auto',
+  'cursor-pointer': 'pointer',
+  'cursor-wait': 'wait',
+  'cursor-move': 'move',
+);
+
+$select-props: (
+  'select-none': 'none',
+  'select-text': 'text',
+  'select-all': 'all',
+  'select-auto': 'auto',
+);
+
+@include style-class('appearance', $appearance-props);
+@include style-class('outline', $outline-props);
+@include style-class('pointer-events', $pointer-events-props);
+@include style-class('cursor', $cursor-props);
+@include style-class('user-select', $select-props);
+
+// box
+.box {
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+  > .box-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

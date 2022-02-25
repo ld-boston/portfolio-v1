@@ -1,0 +1,50 @@
+.input-container {
+  --padding: 14px 12px;
+  --top-offset: -80%;
+  margin-top: 2.8rem;
+
+  @include media-breakpoint-down(xl) {
+    --padding: 10px 8px;
+    --top-offset: -77%;
+    margin-top: 1.8rem;
+  }
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--primary);
+  }
+}
+.input {
+  width: 100%;
+  color: var(--light);
+  padding: var(--padding);
+  background: var(--grey);
+}
+
+.input-label {
+  position: absolute;
+  padding: var(--padding);
+
+  pointer-events: none;
+  transition: transform 0.3s ease, color 0.4s ease, opacity 0.4s ease;
+}
+.input:focus + .input-label,
+.input:not(:placeholder-shown) + .input-label {
+  opacity: 0.8 !important;
+  transform: translate(-0.5rem, var(--top-offset));
+}
+
+.input:focus + .input-label + .input-underline,
+.input:not(:placeholder-shown) + .input-label + .input-underline {
+  left: 0;
+  width: 100%;
+}

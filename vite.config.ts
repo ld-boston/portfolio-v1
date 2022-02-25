@@ -12,7 +12,18 @@ export default defineConfig({
       dts: true,
     }),
   ],
-  alias: {
-    '@': path.resolve(__dirname, './src'),
+  resolve: {
+    alias: { '@': path.resolve(__dirname, './src') },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "@/assets/styles/primeflex/_variables.scss";
+          @import "@/assets/styles/primeflex/_functions.scss";
+          @import "@/assets/styles/primeflex/_mixins.scss";
+        `,
+      },
+    },
   },
 });

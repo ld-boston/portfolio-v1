@@ -1,0 +1,12 @@
+$colors: "blue", "green", "yellow", "cyan", "pink", "indigo", "teal", "orange", "bluegray", "purple", "gray";
+$colorShades: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900;
+$surfaceShades: 0, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900;
+
+@include surface-class('text', 'color', $surfaceShades);
+@include surface-class('surface', 'background-color', $surfaceShades);
+@include surface-class('border', 'border-color', $surfaceShades);
+@include style-class('background-color', (bg-transparent:'transparent'), true);
+@include style-class('border-color', (border-transparent:'transparent'), true);
+@include color-class('text-', 'color', $colors, $colorShades);
+@include color-class('bg-', 'background-color', $colors, $colorShades);
+@include color-class('border-', 'border-color', $colors, $colorShades);

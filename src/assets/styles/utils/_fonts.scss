@@ -1,0 +1,44 @@
+$font-weights: 400, 500, 700;
+
+@each $font-weight in $font-weights {
+  @font-face {
+    font-family: 'Alegreya';
+    font-weight: $font-weight;
+    font-style: normal;
+    src: url('@/assets/fonts/Alegreya-#{$font-weight}.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Lora';
+    font-weight: $font-weight;
+    font-style: normal;
+    src: url('@/assets/fonts/Lora-#{$font-weight}.ttf') format('truetype');
+  }
+}
+
+@font-face {
+  font-family: 'AlegreyaSans';
+  font-weight: 400;
+  font-style: normal;
+  src: url('@/assets/fonts/AlegreyaSans-400.ttf') format('truetype');
+}
+
+.f-lora {
+  font-family: 'Lora', 'Georgia', serif;
+}
+.f-alegreya {
+  font-family: 'Alegreya', 'Georgia', serif;
+}
+.f-alegreya-sans {
+  font-family: 'AlegreyaSans', Arial, sans-serif;
+}
+
+//
+.text-vertical-up {
+  writing-mode: vertical-lr;
+  text-align: center;
+  transform: rotateZ(180deg);
+}
+.text-vertical-down {
+  writing-mode: vertical-lr;
+  text-align: center;
+}

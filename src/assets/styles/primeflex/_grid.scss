@@ -1,0 +1,117 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -1 * $gutter;
+  margin-left: -1 * $gutter;
+}
+
+.row > .col,
+.row > [class*='col'] {
+  box-sizing: border-box;
+}
+
+.g-0 {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.g-0 > .col,
+.g-0 > [class*='col-'] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+@include media-breakpoint-up(md) {
+  .g-3 {
+    margin-right: -3.5rem;
+    margin-left: -3.5rem;
+  }
+  .g-3 > .col,
+  .g-3 > [class*='col-'] {
+    padding-right: 3.5rem;
+    padding-left: 3.5rem;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .g-3 {
+    margin-right: -5rem;
+    margin-left: -5rem;
+  }
+
+  .g-3 > .col,
+  .g-3 > [class*='col-'] {
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
+}
+
+.col {
+  flex-grow: 1;
+  flex-basis: 0;
+  padding-right: $gutter;
+  padding-left: $gutter;
+}
+
+.col-fixed {
+  flex: 0 0 auto;
+  padding-right: $gutter;
+  padding-left: $gutter;
+}
+
+$grid-columns: (
+  'col-1': 8.3333%,
+  'col-2': 16.6667%,
+  'col-3': 25%,
+  'col-4': 33.3333%,
+  'col-5': 41.6667%,
+  'col-6': 50%,
+  'col-7': 58.3333%,
+  'col-8': 66.6667%,
+  'col-9': 75%,
+  'col-10': 83.3333%,
+  'col-11': 91.6667%,
+  'col-12': 100%,
+);
+
+$grid-column-offsets: (
+  'col-offset-0': 0,
+  'col-offset-1': 8.3333%,
+  'col-offset-2': 16.6667%,
+  'col-offset-3': 25%,
+  'col-offset-4': 33.3333%,
+  'col-offset-5': 41.6667%,
+  'col-offset-6': 50%,
+  'col-offset-7': 58.3333%,
+  'col-offset-8': 66.6667%,
+  'col-offset-9': 75%,
+  'col-offset-10': 83.3333%,
+  'col-offset-11': 91.6667%,
+  'col-offset-12': 100%,
+);
+
+@each $col, $width in $grid-columns {
+  .#{$col} {
+    flex: 0 0 auto;
+    padding-right: $gutter;
+    padding-left: $gutter;
+    width: #{$width};
+  }
+}
+
+@each $key, $val in $breakpoints {
+  @media screen and (min-width: #{$val}) {
+    .#{$key + $separator} {
+      @each $col, $width in $grid-columns {
+        &#{$col} {
+          flex: 0 0 auto;
+          padding-right: $gutter;
+          padding-left: $gutter;
+          width: #{$width};
+        }
+      }
+    }
+  }
+}
+
+@include style-class('col-offset', $grid-column-offsets, true);

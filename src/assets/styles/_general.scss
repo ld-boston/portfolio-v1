@@ -1,0 +1,43 @@
+@import 'utils/colors';
+@import 'utils/fonts';
+@import 'utils/buttons';
+@import 'utils/forms';
+
+html {
+  height: 100%;
+}
+body {
+  @extend .f-lora;
+  background-color: var(--dark);
+  color: var(--light);
+
+  overflow-x: hidden;
+  min-height: 100%;
+  display: flex;
+  > #app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+main {
+  flex-grow: 1;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1380px;
+  padding: 0 1rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include media-breakpoint-down(xl) {
+    max-width: 960px;
+  }
+  @include media-breakpoint-down(lg) {
+    max-width: 700px;
+  }
+  @include media-breakpoint-down(md) {
+    max-width: 500px;
+  }
+}

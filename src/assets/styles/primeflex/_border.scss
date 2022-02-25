@@ -1,0 +1,68 @@
+// border style
+$border-scales: 0px, 1px, 2px, 3px, 4px;
+
+$border-directions: (
+  '': 'border',
+  'top': 'border-top',
+  'right': 'border-inline-end',
+  'left': 'border-inline-start',
+  'bottom': 'border-bottom',
+  'x': (
+    'border-inline-start',
+    'border-inline-end',
+  ),
+  'y': (
+    'border-top',
+    'border-bottom',
+  ),
+);
+
+$border-styles: (
+  'border-solid': solid,
+  'border-dashed': dashed,
+  'border-dotted': dotted,
+  'border-double': double,
+);
+
+@include border-class('border', $border-directions, $border-scales);
+@include style-class('border-style', $border-styles, true);
+
+// border radius
+$border-radius-props: (
+  'border-noround': 0,
+  'border-pill': 999px,
+  'border-circle': 50%,
+);
+
+@for $i from 1 to 16 {
+  $border-radius-props: map-merge(
+    $border-radius-props,
+    (
+      'border-round-#{$i}': #{$i}px,
+    )
+  );
+
+  @include border-radius-class(
+    (
+      'border-round-left': (
+        'start-start',
+        'end-start',
+      ),
+      'border-round-top': (
+        'start-start',
+        'start-end',
+      ),
+      'border-round-right': (
+        'start-end',
+        'end-end',
+      ),
+      'border-round-bottom': (
+        'end-start',
+        'end-end',
+      ),
+    ),
+    $i
+  );
+}
+
+@include style-class('border-radius', $border-radius-props, true);
