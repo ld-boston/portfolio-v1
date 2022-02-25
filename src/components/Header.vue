@@ -143,7 +143,6 @@ function setLinksHighlight() {
     left = left + 16 + width * 0.5;
     width = width - 32 - width * 0.5;
 
-    console.log(activeLinkBox);
     linksHighlightEl.value.style.left = `${left}px`;
     linksHighlightEl.value.style.width = `${width}px`;
   });

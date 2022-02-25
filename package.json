@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.26.0",
+    "cosmicjs": "^4.1.2",
     "vue": "^3.2.25",
     "vue-inline-svg": "^2.1.0",
     "vue-router": "^4.0.12"
