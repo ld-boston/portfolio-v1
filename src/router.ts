@@ -45,3 +45,32 @@ const router = createRouter({
 });
 
 export default router;
+
+const pageIndexs = {
+  index: 1,
+  'about-me': 2,
+  books: 3,
+  blog: 4,
+  contact: 5,
+};
+router.beforeEach((to, from, next) => {
+  if (!from.name || !to.name) {
+    to.meta.transitionName = 'fade';
+    return next();
+  }
+
+  let toName = to.name.toString() as keyof typeof pageIndexs;
+  let fromName = from.name.toString() as keyof typeof pageIndexs;
+  if (!(toName in pageIndexs) || !(fromName in pageIndexs)) {
+    to.meta.transitionName = 'fade';
+    return next();
+  }
+
+  if (pageIndexs[fromName] < pageIndexs[toName]) {
+    to.meta.transitionName = 'slide-left';
+  } else {
+    to.meta.transitionName = 'slide-right';
+  }
+
+  next();
+});

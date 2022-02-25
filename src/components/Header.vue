@@ -144,6 +144,7 @@ function setLinksHighlight() {
 <style lang="scss" scoped>
 header {
   position: sticky;
+  z-index: 1000;
   top: 0;
   background-color: var(--dark);
 }

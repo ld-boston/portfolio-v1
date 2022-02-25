@@ -1,39 +1,33 @@
 @import 'primeflex/primeflex';
 @import 'general';
 
-.page-enter-to,
-.page-leave-from {
-  transform: translateX(0);
-}
-
-.slide-left {
-  .page-enter-from {
-    transform: translateX(100%);
-  }
-  .page-leave-to {
-    transform: translateX(-100%);
-  }
-}
-.slide-right {
-  .page-enter-from {
-    transform: translateX(-100%);
-  }
-  .page-leave-to {
-    transform: translateX(100%);
-  }
-}
-
-.page-enter-from,
-.page-leave-to {
+// slide page transition
+.slide-right-leave-to,
+.slide-left-enter-from {
   opacity: 0;
+  transform: translateX(100%);
 }
 
-.page-enter-to,
-.page-leave-from {
-  opacity: 1;
+.slide-right-enter-from,
+.slide-left-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
 }
 
-.page-enter-active,
-.page-leave-active {
+.slide-right-enter-active,
+.slide-left-enter-active,
+.slide-right-leave-active,
+.slide-left-leave-active {
   transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+// fade page transition
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
