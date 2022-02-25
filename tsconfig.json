@@ -12,13 +12,21 @@
     "lib": [
       "esnext",
       "dom"
-    ]
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+    },
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    // 
+    "components.d.ts",
   ],
   "references": [
     {

@@ -1,0 +1,46 @@
+{
+  "template": {
+    "scope": "vue",
+    "prefix": "template",
+    "body": [
+      "<template>",
+      "  $1",
+      "</template>"
+    ],
+    "description": "Create <template> block"
+  },
+  "script": {
+    "scope": "vue",
+    "prefix": "script",
+    "body": [
+      "<script lang=\"ts\">",
+      "import { defineComponent } from 'vue';",
+      "",
+      "export default defineComponent({",
+      "  $2",
+      "});",
+      "</script>"
+    ],
+    "description": "Create <script> block"
+  },
+  "script setup": {
+    "scope": "vue",
+    "prefix": "script setup",
+    "body": [
+      "<script lang=\"ts\" setup>",
+      "$1",
+      "</script>",
+    ],
+    "description": "Create <script setup> + <script> blocks"
+  },
+  "style": {
+    "scope": "vue",
+    "prefix": "style",
+    "body": [
+      "<style lang=\"scss\" scoped>",
+      "$1",
+      "</style>"
+    ],
+    "description": "Create <style> block"
+  }
+}

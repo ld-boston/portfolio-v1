@@ -1,0 +1,6 @@
+{
+  // primeflex class completion, requires (HTML CSS Support) extention
+  "css.styleSheets": [
+    "https://unpkg.com/primeflex@3.1.0/primeflex.css"
+  ],
+}
