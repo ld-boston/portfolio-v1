@@ -26,4 +26,8 @@ export default defineConfig({
       },
     },
   },
+  // fix for process.env missing
+  define: {
+    'process.env': {},
+  },
 });
