@@ -112,32 +112,3 @@
   }
 }
 </style>
-
-<style lang="scss">
-body::before {
-  content: '';
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100vh;
-  background-color: var(--grey);
-
-  transition: width 0.5s ease-in-out;
-
-  @media screen and (max-width: 768px) {
-    position: absolute;
-    width: 100vw;
-    height: 0;
-  }
-}
-.about-me::before {
-  width: 50%;
-
-  @media screen and (max-width: 768px) {
-    width: 100vw;
-    height: 80vh;
-  }
-}
-</style>

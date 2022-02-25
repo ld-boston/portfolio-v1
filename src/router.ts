@@ -46,6 +46,7 @@ const router = createRouter({
 
 export default router;
 
+// transition middleware
 const pageIndexs = {
   index: 1,
   'about-me': 2,
@@ -70,6 +71,24 @@ router.beforeEach((to, from, next) => {
     to.meta.transitionName = 'slide-left';
   } else {
     to.meta.transitionName = 'slide-right';
+  }
+
+  next();
+});
+
+// body class middleware
+router.beforeEach((to, from, next) => {
+  if (!document) {
+    return next();
+  }
+
+  if (from.name) {
+    document.body.classList.remove(
+      `page-${from.name.toString().toLowerCase()}`,
+    );
+  }
+  if (to.name) {
+    document.body.classList.add(`page-${to.name.toString().toLowerCase()}`);
   }
 
   next();

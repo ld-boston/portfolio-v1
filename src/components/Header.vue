@@ -6,6 +6,7 @@
       <div class="f-alegreya f-medium f-24px md:f-32px xl:f-42px">
         L.D. Boston
       </div>
+
       <nav class="ml-auto nav-links" :class="{ show: sidebarShown }">
         <div class="mobile-nav head">
           <span class="f-alegreya f-medium f-24px">L.D. Boston</span>
@@ -80,6 +81,13 @@
           </a>
         </div>
       </nav>
+
+      <div
+        class="mobile-nav backdrop"
+        :class="{ show: sidebarShown }"
+        @click="toggleSidebar"
+      ></div>
+
       <button class="mobile-nav toggle ml-auto" @click="toggleSidebar">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +132,7 @@ function setLinksHighlight() {
     if (!links) return;
     let linksBox = links.getBoundingClientRect();
     let activeLinkBox = document
-      .querySelector('header .links a.router-link-active')
+      .querySelector('header .links a.router-link-exact-active')
       ?.getBoundingClientRect();
 
     if (!activeLinkBox) return;
@@ -135,6 +143,7 @@ function setLinksHighlight() {
     left = left + 16 + width * 0.5;
     width = width - 32 - width * 0.5;
 
+    console.log(activeLinkBox);
     linksHighlightEl.value.style.left = `${left}px`;
     linksHighlightEl.value.style.width = `${width}px`;
   });
@@ -161,7 +170,7 @@ header {
     }
 
     @media screen and (max-width: $md) {
-      &.router-link-active {
+      &.router-link-exact-active {
         color: var(--primary);
       }
     }
@@ -173,7 +182,7 @@ header {
     height: 3px;
     border-radius: 4px;
     background-color: var(--primary);
-    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    transition: width 1.1s ease-in-out, left 1.1s ease-in-out;
     @media screen and (max-width: $md) {
       display: none;
     }
@@ -247,6 +256,23 @@ header {
 
     svg {
       font-size: 30px;
+    }
+  }
+
+  .mobile-nav.backdrop {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background-color: rgba(#000, 0.5);
+
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    &.show {
+      visibility: visible;
+      opacity: 1;
     }
   }
 }

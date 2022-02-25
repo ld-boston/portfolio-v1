@@ -20,7 +20,7 @@
         </p>
         <router-link
           class="btn btn-primary f-16px md:f-18px lg:f-20px xl:f-24px xl:py-4 xl:px-7 md:mt-3 xl:mt-4"
-          :to="{ name: 'index' }"
+          :to="{ name: 'books' }"
         >
           My Work
         </router-link>
