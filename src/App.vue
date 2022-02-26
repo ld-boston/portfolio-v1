@@ -12,8 +12,14 @@
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- image -->
-    <meta property="og:image" content="/img/base-social.jpg" />
-    <meta name="twitter:image" content="/img/base-social.jpg" />
+    <meta
+      property="og:image"
+      content="https://www.ld-boston.cf/img/base-social.jpg"
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.ld-boston.cf/img/base-social.jpg"
+    />
   </Head>
   <router-view />
 </template>
