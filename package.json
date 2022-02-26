@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueuse/head": "^0.7.5",
     "axios": "^0.26.0",
     "cosmicjs": "^4.1.2",
     "vue": "^3.2.25",

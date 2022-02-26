@@ -3,6 +3,7 @@ import App from '@/App.vue';
 import InlineSvg from 'vue-inline-svg';
 //
 import Router from '@/router';
+import { Head } from '@/services/settings';
 
 /* Style */
 import '@/assets/styles/main.scss';
@@ -10,7 +11,8 @@ import '@/assets/styles/main.scss';
 /* App */
 const app = createApp(App)
   //
-  .use(Router);
+  .use(Router)
+  .use(Head);
 
 /* Components */
 app.component('inline-svg', InlineSvg);
