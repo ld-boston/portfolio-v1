@@ -6,7 +6,10 @@
     <div v-else-if="error">error ! {{ error }}</div>
     <div v-else class="posts-container">
       <template v-for="post in posts">
-        <router-link :to="{ name: 'blog' }" class="post">
+        <router-link
+          :to="{ name: 'blog-post', params: { slug: post.slug } }"
+          class="post"
+        >
           <img :src="post.metadata?.image?.imgix_url" alt="" />
           <div class="content p-3 pb-4">
             <div class="f-26px f-bold f-alegreya-sans">{{ post.title }}</div>
