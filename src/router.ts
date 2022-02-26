@@ -19,21 +19,47 @@ const routes: Array<RouteRecordRaw> = [
         path: '/about-me/',
         name: 'about-me',
         component: () => import('@/pages/about-me.vue'),
+        //
+        meta: {
+          title: 'L.D. Boston | About me',
+          description: 'About L.D. Boston',
+        },
       },
       {
         path: '/books/',
         name: 'books',
         component: () => import('@/pages/books.vue'),
+        //
+        meta: {
+          title: 'L.D. Boston | Books',
+          description: 'Books created by L.D. Boston',
+        },
       },
       {
         path: '/blog/',
         name: 'blog',
         component: () => import('@/pages/blog.vue'),
+        //
+        meta: {
+          title: 'L.D. Boston | Blog',
+          description: "L.D. Boston's Blog",
+        },
       },
       {
         path: '/contact/',
         name: 'contact',
         component: () => import('@/pages/contact.vue'),
+        //
+        meta: {
+          title: 'L.D. Boston | Contact',
+          description: 'Contact L.D. Boston',
+        },
+      },
+      //
+      {
+        path: '/:slug/',
+        name: 'blog-post',
+        component: () => import('@/pages/blog-post.vue'),
       },
     ],
   },
