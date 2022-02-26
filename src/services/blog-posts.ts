@@ -30,3 +30,25 @@ export async function getPosts() {
     posts: posts,
   };
 }
+
+export async function getPost(slug: string) {
+  let post;
+  try {
+    post = await bucket.getObjects({
+      query: { slug },
+      props: 'slug,title,content,metadata',
+    });
+  } catch (error) {
+    console.log(error);
+
+    return {
+      success: false,
+      post: null,
+    };
+  }
+
+  return {
+    success: true,
+    post: post.objects[0],
+  };
+}
