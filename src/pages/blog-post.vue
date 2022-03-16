@@ -119,11 +119,17 @@ onMounted(async () => {
     @include mx-auto;
     max-width: 820px;
     padding: 42px 36px;
+    @include media-breakpoint-down(xl) {
+      padding: 1rem;
+    }
     border-radius: 10px;
     background-color: var(--grey);
 
     position: relative;
     margin-top: -64px;
+    @include media-breakpoint-down(xl) {
+      margin-top: 1rem;
+    }
 
     ::v-deep() {
       img {
@@ -161,6 +167,9 @@ onMounted(async () => {
     @include mx-auto;
     max-width: 820px;
     padding: 42px 36px;
+    @include media-breakpoint-down(xl) {
+      padding: 1rem;
+    }
     border-radius: 10px;
     background-color: var(--grey);
   }
