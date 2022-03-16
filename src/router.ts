@@ -2,6 +2,11 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 //
 import BaseLayout from '@/layouts/base.vue';
 import index from '@/pages/index.vue';
+import aboutMe from '@/pages/about-me.vue';
+import books from '@/pages/books.vue';
+import blog from '@/pages/blog.vue';
+import contact from '@/pages/contact.vue';
+import blogPost from '@/pages/blog-post.vue';
 
 const routes: Array<RouteRecordRaw> = [
   //
@@ -18,7 +23,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/about-me/',
         name: 'about-me',
-        component: () => import('@/pages/about-me.vue'),
+        component: aboutMe,
         //
         meta: {
           title: 'L.D. Boston | About me',
@@ -28,7 +33,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/books/',
         name: 'books',
-        component: () => import('@/pages/books.vue'),
+        component: books,
         //
         meta: {
           title: 'L.D. Boston | Books',
@@ -38,7 +43,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/blog/',
         name: 'blog',
-        component: () => import('@/pages/blog.vue'),
+        component: blog,
         //
         meta: {
           title: 'L.D. Boston | Blog',
@@ -48,7 +53,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/contact/',
         name: 'contact',
-        component: () => import('@/pages/contact.vue'),
+        component: contact,
         //
         meta: {
           title: 'L.D. Boston | Contact',
@@ -59,7 +64,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/:slug/',
         name: 'blog-post',
-        component: () => import('@/pages/blog-post.vue'),
+        component: blogPost,
       },
     ],
   },
