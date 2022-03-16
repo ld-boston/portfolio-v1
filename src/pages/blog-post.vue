@@ -1,20 +1,36 @@
 <template>
-  <div class="post-container mt-5">
-    <div v-if="loading"><Spinner /></div>
+  <div class="container my-5">
+    <div v-if="loading" class="text-center mt-6">
+      <Spinner size="80" thickness="4" />
+    </div>
     <div v-else-if="error">
       <h2>{{ error }}</h2>
     </div>
-    <template v-else>
-      <h1 class="f-40px">{{ post.title }}</h1>
-      <div class="text-center">
-        <img
-          :src="post.metadata?.image?.imgix_url"
-          style="max-width: 100%; max-height: 422px; object-fit: scale-down"
-          alt=""
-        />
+    <div v-else class="post">
+      <h1 class="f-24px sm:f-30px md:f-35px md:f-45px xl:f-60px text-center">
+        {{ post.title }}
+      </h1>
+
+      <div class="img-wrapper text-center">
+        <div class="img-container">
+          <img :src="post.metadata?.image?.imgix_url" alt="" />
+        </div>
       </div>
-      <div v-html="post.content"></div>
-    </template>
+
+      <div class="post-content" v-html="post.content"></div>
+
+      <!--  -->
+      <hr
+        class="mx-auto my-4"
+        style="max-width: 820px; background-color: grey"
+      />
+      <div class="comments">
+        <h2 class="mt-0">Comments</h2>
+        <div class="disqus-container">
+          <Disqus />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -90,13 +106,72 @@ onMounted(async () => {
 </script>
 
 <style lang="scss" scoped>
-.post-container {
-  max-width: 670px;
-  margin-left: auto;
-  margin-right: auto;
+.post {
+  > h1 {
+    @include mx-auto;
+    max-width: 1160px;
+  }
+  .img-wrapper {
+    @include mx-auto;
+    max-width: 935px;
+  }
+  .post-content {
+    @include mx-auto;
+    max-width: 820px;
+    padding: 42px 36px;
+    border-radius: 10px;
+    background-color: var(--grey);
 
-  ::v-deep(img) {
-    max-width: 100%;
+    position: relative;
+    margin-top: -64px;
+
+    ::v-deep() {
+      img {
+        max-width: 100%;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.5em;
+
+        margin: 0 0 1.5rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .img-container {
+    width: 100%;
+    padding-top: 55%;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-color: #fff;
+      border-radius: 10px;
+    }
+  }
+
+  .comments {
+    @include mx-auto;
+    max-width: 820px;
+    padding: 42px 36px;
+    border-radius: 10px;
+    background-color: var(--grey);
+  }
+}
+
+.disqus-container {
+  position: relative;
+  overflow: hidden;
+
+  > div {
+    margin-bottom: -40px;
   }
 }
 </style>

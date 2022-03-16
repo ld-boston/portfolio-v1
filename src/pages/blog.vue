@@ -1,22 +1,24 @@
 <template>
-  <div class="container mt-8 text-center">
-    <div v-if="loading" class="text-center">
-      <Spinner size="100" thickness="4" />
+  <div class="container mt-8 text-center" style="max-width: 1000px">
+    <div v-if="loading" class="text-center mt-6">
+      <Spinner size="80" thickness="4" />
     </div>
     <div v-else-if="error">error ! {{ error }}</div>
-    <div v-else class="posts-container">
-      <template v-for="post in posts">
+    <div v-else class="posts-container row">
+      <div v-for="post in posts" class="md:col-6 col-12">
         <router-link
           :to="{ name: 'blog-post', params: { slug: post.slug } }"
           class="post"
         >
-          <img :src="post.metadata?.image?.imgix_url" alt="" />
+          <div class="img-container">
+            <img :src="post.metadata?.image?.imgix_url" alt="" />
+          </div>
           <div class="content p-3 pb-4">
             <div class="f-26px f-bold f-alegreya-sans">{{ post.title }}</div>
             <div class="f-14px mt-2">{{ post.metadata?.description }}</div>
           </div>
         </router-link>
-      </template>
+      </div>
     </div>
   </div>
 </template>
@@ -38,10 +40,6 @@ onMounted(async () => {
 </script>
 
 <style lang="scss" scoped>
-.posts-container {
-  columns: 3 200px;
-}
-
 .post {
   display: block;
   break-inside: avoid;
@@ -50,10 +48,20 @@ onMounted(async () => {
   background-color: var(--grey);
   margin-bottom: 20px;
 
-  img {
+  .img-container {
     width: 100%;
-    object-fit: contain;
-    background-color: #fff;
+    padding-top: 55%;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-color: #fff;
+    }
   }
 
   .content {
