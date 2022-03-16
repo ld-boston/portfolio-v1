@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import App from '@/App.vue';
 import InlineSvg from 'vue-inline-svg';
+import VueDisqus from 'vue-disqus';
 //
 import Router from '@/router';
 import { Head } from '@/services/settings';
@@ -12,7 +13,8 @@ import '@/assets/styles/main.scss';
 const app = createApp(App)
   //
   .use(Router)
-  .use(Head);
+  .use(Head)
+  .use(VueDisqus, { shortname: 'ld-boston' });
 
 /* Components */
 app.component('inline-svg', InlineSvg);
