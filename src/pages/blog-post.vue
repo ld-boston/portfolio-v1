@@ -20,7 +20,7 @@
       <div class="post-content" v-html="post.content"></div>
 
       <!--  -->
-      <hr
+      <!-- <hr
         class="mx-auto my-4"
         style="max-width: 820px; background-color: grey"
       />
@@ -29,7 +29,7 @@
         <div class="disqus-container">
           <Disqus />
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
