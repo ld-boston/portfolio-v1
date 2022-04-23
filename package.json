@@ -11,6 +11,7 @@
     "@vueuse/head": "^0.7.5",
     "axios": "^0.26.0",
     "cosmicjs": "^4.1.2",
+    "vite-svg-loader": "^3.2.0",
     "vue": "^3.2.25",
     "vue-disqus": "^5.1.0",
     "vue-inline-svg": "^2.1.0",

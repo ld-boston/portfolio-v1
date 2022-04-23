@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import Components from 'unplugin-vue-components/vite';
+import svgLoader from 'vite-svg-loader';
 const path = require('path');
 
 // https://vitejs.dev/config/
@@ -11,6 +12,7 @@ export default defineConfig({
       dirs: ['src/components', 'src/pages', 'src/layouts'],
       dts: true,
     }),
+    svgLoader(),
   ],
   resolve: {
     alias: { '@': path.resolve(__dirname, './src') },
