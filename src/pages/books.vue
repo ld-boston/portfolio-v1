@@ -58,6 +58,10 @@
 <style lang="scss" scoped>
 .content {
   line-height: 21px;
+  text-align: start;
+  @include media-breakpoint-down(md) {
+    text-align: justify;
+  }
 }
 .book:not(:last-child) {
   margin-bottom: 40px;
