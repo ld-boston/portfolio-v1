@@ -1,13 +1,13 @@
 <template>
   <div class="container">
     <div class="row g-3 py-3 md:pt-3 lg:pt-4 relative">
-      <div class="col-12 md:col-6 align-self-center">
+      <div class="col-12 md:col-6 align-self-center pt-4 md:pt-0">
         <div class="avatar-img box">
           <img src="/img/avatar.jpg" class="box-content px-3 xl:px-5" alt="" />
         </div>
       </div>
       <div class="col-12 block md:hidden">
-        <h2 class="f-alegreya f-bold op-60 my-4 f-44px text-center">
+        <h2 class="middle-text f-alegreya f-bold op-60 my-4 f-44px text-center">
           WHO AM I?
         </h2>
       </div>
@@ -109,6 +109,21 @@
     @include media-breakpoint-down(sm) {
       line-height: unset;
     }
+  }
+}
+
+.middle-text {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 200vw;
+    height: 200vh;
+    left: -100%;
+    bottom: 50%;
+    background-color: var(--grey);
+    z-index: -1;
+    pointer-events: none;
   }
 }
 </style>
