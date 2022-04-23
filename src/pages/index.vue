@@ -11,18 +11,17 @@
           I am L.D. Boston
         </h1>
         <p class="f-19 md:f-22px lg:f-28px xl:f-32px">
-          A novelist during daytime and
-          <br />and a blogger at night.
+          I'm a sci-fi author from the future
         </p>
         <p class="f-16 md:f-18px lg:f-20px xl:f-26px xl:pt-4">
-          my life is dedicated to creating impactful stories and helping people
-          making ones of their own.
+          My life centers around creating entertaining stories and guiding
+          others in writing theirs.
         </p>
         <router-link
           class="btn btn-primary f-16px md:f-18px lg:f-20px xl:f-24px xl:py-4 xl:px-7 md:mt-3 xl:mt-4"
           :to="{ name: 'books' }"
         >
-          My Work
+          See my book
         </router-link>
       </div>
       <div
