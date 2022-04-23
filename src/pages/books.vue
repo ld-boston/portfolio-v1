@@ -111,7 +111,7 @@ let books = [
     sub_title: 'A thriller story',
     motto_left: 'When blood dries',
     motto_right: "All that's left is regret",
-    link_amazon: 'https://www.test.com/amazon',
+    link_amazon: '',
     link_excerpt: 'https://www.test.com/except',
     cover: '/img/books/Juncture.jpg',
     body: `
