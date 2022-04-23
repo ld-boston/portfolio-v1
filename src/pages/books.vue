@@ -5,7 +5,7 @@
         <div
           class="f-alegreya f-bold lg:f-40px xl:f-61px op-60 text-vertical-up hidden lg:block"
         >
-          {{ book.title }}
+          {{ book.motto_left }}
         </div>
         <div class="flex flex-column md:flex-row book-card md:mx-2">
           <img :src="book.cover" alt="" />
@@ -39,17 +39,16 @@
               </a>
             </div>
             <hr class="mt-3 xl:mt-5 mb-1 w-10 mx-auto" />
-            <p
+            <div
               v-html="book.body"
-              class="f-16 md:f-12 lg:f-14 xl:f-18px op-80"
-              style="line-height: 21px"
-            />
+              class="content f-16 md:f-12 lg:f-14 xl:f-18px op-80"
+            ></div>
           </div>
         </div>
         <div
           class="f-alegreya f-bold lg:f-40px xl:f-61px op-60 text-vertical-down hidden lg:block"
         >
-          {{ book.sub_title_aside }}
+          {{ book.motto_right }}
         </div>
       </div>
     </div>
@@ -57,6 +56,9 @@
 </template>
 
 <style lang="scss" scoped>
+.content {
+  line-height: 21px;
+}
 .book:not(:last-child) {
   margin-bottom: 40px;
   position: relative;
@@ -107,38 +109,47 @@ let books = [
   {
     title: 'The Juncture',
     sub_title: 'A thriller story',
-    sub_title_aside: 'Chase Your Mistakes',
+    motto_left: 'When blood dries',
+    motto_right: "All that's left is regret",
     link_amazon: 'https://www.test.com/amazon',
     link_excerpt: 'https://www.test.com/except',
     cover: '/img/books/Juncture.jpg',
     body: `
-      A hard-working scientist and soon-to-be father, Dr Jevise Scott
-      regrettably decides to steal the research papers of his
-      supervising professor, Theodore Semyonovich, in order to invent
-      time-travel and attain worldwide renown like that of chronicled
-      scientists, such as Albert Einstein and Sir Isaac Newton.
-      <br /><br />
-      The results of his misdeed immediately backfire, as he is chased
-      down by a small army of genetically-modified soldiers: a project
-      that was thought to be dropped by Professor Semyonovich, but was
-      continued in secret without Scott's knowledge.
-      <br /><br />
-      The results of his misdeed immediately backfire, as he is chased
-      down by a small army of genetically-modified soldiers: a project
-      that was thought to be dropped by Professor Semyonovich, but was
-      continued in secret without Scott's knowledge.
-      <br /><br />
-      Following this revelation, Scott is ultimately forced to flee his
-      home and leave any hope of a bright future. Although, during his
-      attempt to escape, he is chased and abducted by his physically
-      superior pursuers. Fortunately for him, however, a group of
-      mysterious people rescue him, and later reveal themselves as
-      time-travellers from 27 years in the future.
-      <br /><br />
-      Dr Scott, who is pained by his mistakes, has no choice but to
-      follow them on a one-chance mission to undo his misdeeds, with the
-      hope of preventing a dystopian future. Together, they travel back
-      in time to where it all began: Moscow in 1988.
+      <p>
+        <em>
+          The universe won't wait for you to fix it. In fact, you've
+          already fallen behind.
+        </em>
+      </p>
+      <p>
+        Bound, beaten, and defeated, ex-soldier and PhD researcher Dr
+        Scott suffers the consequences of plagiarising his fellow
+        professor's papers on time-travel theory, three years after the
+        fact. His captors: a militia of genetically-modified soldiers.
+        Their goal: to gain access to the technology he had developed
+        using the stolen research.
+      </p>
+      <p>
+        With no hope of escape, the situation is looking grim for Scott
+        when the facility he's being held in comes under siege by a group
+        masked individuals. Dr Scott broken free, they reveal themselves
+        to be soldiers from a dystopian America... Thirty years in the
+        future.
+      </p>
+      <p>
+        <strong>
+          “In nature there are neither rewards nor punishments; there are
+          consequences.”
+        </strong>
+        — Robert Green Ingersoll
+      </p>
+      <p>
+        Desperate and guilt-ridden, Dr Scott is brought onto a last-chance
+        mission to prevent the dystopian future to which his actions
+        served as a catalyst. With his knowledge, the fate of the world is
+        thrown into his hands, and the only way to save the future is
+        through the past.
+      </p>
     `,
   },
 ];
