@@ -3,12 +3,13 @@
 <template>
   <header>
     <div class="container py-3 md:py-2 lg:py-3 xl:py-4 flex align-items-center">
-      <div
-        class="f-alegreya f-medium f-24px md:f-32px xl:f-42px flex align-items-center"
+      <router-link
+        :to="{ name: 'index' }"
+        class="header-logo f-alegreya f-medium f-24px md:f-32px xl:f-42px flex align-items-center"
       >
-        <Logo height="2.3rem" fill="#fff" />
+        <Logo fill="#fff" />
         <span class="ml-2 lg:ml-3">L.D. Boston</span>
-      </div>
+      </router-link>
 
       <nav class="ml-auto nav-links" :class="{ show: sidebarShown }">
         <div class="mobile-nav head">
@@ -159,7 +160,22 @@ header {
   position: sticky;
   z-index: 1000;
   top: 0;
-  background-color: var(--dark);
+  background-color: rgba(#222, 0.5);
+  backdrop-filter: blur(12px);
+
+  .container {
+    @include media-breakpoint-down(md) {
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
+    }
+  }
+
+  .header-logo > svg {
+    height: 2.3rem;
+    @include media-breakpoint-down(lg) {
+      height: 1.8rem;
+    }
+  }
 }
 .nav-links {
   position: relative;
