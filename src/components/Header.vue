@@ -3,8 +3,11 @@
 <template>
   <header>
     <div class="container py-3 md:py-2 lg:py-3 xl:py-4 flex align-items-center">
-      <div class="f-alegreya f-medium f-24px md:f-32px xl:f-42px">
-        L.D. Boston
+      <div
+        class="f-alegreya f-medium f-24px md:f-32px xl:f-42px flex align-items-center"
+      >
+        <Logo height="2.3rem" fill="#fff" />
+        <span class="ml-2 lg:ml-3">L.D. Boston</span>
       </div>
 
       <nav class="ml-auto nav-links" :class="{ show: sidebarShown }">
@@ -109,6 +112,8 @@
 <script lang="ts" setup>
 import { nextTick, onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
+
+import Logo from '@/assets/img/boston-logo.svg';
 
 let sidebarShown = ref(false);
 let toggleSidebar = () => (sidebarShown.value = !sidebarShown.value);
