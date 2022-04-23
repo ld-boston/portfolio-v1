@@ -103,11 +103,8 @@
     @include media-breakpoint-down(xl) {
       line-height: 22px;
     }
-    @include media-breakpoint-down(lg) {
-      line-height: 16px;
-    }
-    @include media-breakpoint-down(sm) {
-      line-height: unset;
+    @include media-breakpoint-down(md) {
+      line-height: 21px;
     }
   }
 }
