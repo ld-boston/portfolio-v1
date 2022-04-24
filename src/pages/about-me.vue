@@ -12,30 +12,40 @@
         </h2>
       </div>
       <div class="col-12 md:col-6 f-16px md:f-12px lg:f-14px xl:f-20px text">
+        <p>Hi. My name is Lokmane, but I go by the name L. D. Boston.</p>
         <p>
-          I was born on June 2nd 1999. Before making my debut novel, I got my
-          professional Bachelor's degree in mining engineering from the
-          university of Badji-Moukhtar in my home town, Annaba.
+          Since you’re here, you could probably tell I’m an author who writes
+          sci-fi thrillers. Let me tell you how I started.
         </p>
         <p>
-          Like many authors, I started my storytelling journey since I was young
-          by scribbling and illustrating. The first book I read was "The Pale
-          Horse" by Agatha Christie which drove me to read more books and
-          inspired me to write one myself.
+          It began when I was young, when I was fascinated by the concept of
+          turning my ideas and imagination into something palpable, like a
+          story. I’ve always considered myself a creative person, which is why I
+          chose to work in the field of design while investing in my passion for
+          storytelling.
         </p>
         <p>
-          I stopped writing at some point, but that changed once I discovered
-          "The Alchemist" by Paolo Coelho, which is I still consider my
-          favourite because of the way it described the main character's
-          journey. With my new understanding of storytelling, I started reading
-          more about story structures and such, and that's how I regained my
-          passion for writing.
+          The first motivation that started my storytelling journey came from
+          reading Agatha Christie’s detective book “The Pale Horse”, as I was
+          captivated by her narrative style and attention to detail. This helped
+          push me into reading more books.
         </p>
         <p>
-          I write fiction, specifically thrillers, and I also like writing
-          articles to help others and share my experiences. When I'm not writing
-          or reading, I'm either creating designs, playing video games, or
-          hanging out with my friends.
+          My last arrival was “The Alchemist” by Paulo Coelho, a masterpiece
+          that taught me a lot about how to develop a character’s journey. So
+          with such information and inspiration, I began working on my year-long
+          project “The Juncture”.
+        </p>
+        <p>
+          Once I’d taken the chance to write my first book and experienced what
+          it was like, I’ve decided that I would make more and share them with
+          the world, as well as embark on a mission to help anybody who wishes
+          to make their own.
+        </p>
+        <p>
+          Feel free to get in touch with me if you’d like to know anything about
+          my work, or if you want to discuss storytelling and the subject of
+          writing books.
         </p>
       </div>
       <div class="who f-alegreya f-bold op-60 text-vertical-down">
