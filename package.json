@@ -1,29 +1,22 @@
 {
-  "name": "portfolio-v1",
+  "name": "ld-boston",
+  "version": "2.0.0",
   "private": true,
-  "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@vueuse/head": "^0.7.5",
-    "axios": "^0.26.0",
-    "cosmicjs": "^4.1.2",
-    "vite-svg-loader": "^3.2.0",
-    "vue": "^3.2.25",
-    "vue-disqus": "^5.1.0",
-    "vue-inline-svg": "^2.1.0",
-    "vue-router": "^4.0.12"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@types/node": "^17.0.21",
-    "@vitejs/plugin-vue": "^2.2.0",
-    "sass": "^1.49.9",
-    "typescript": "^4.5.4",
-    "unplugin-vue-components": "^0.17.21",
-    "vite": "^2.8.0",
-    "vue-tsc": "^0.29.8"
+    "@vueuse/core": "^9.4.0",
+    "@vueuse/nuxt": "^9.4.0",
+    "cosmicjs": "^4.2.10",
+    "nuxt": "3.0.0-rc.12",
+    "sass": "1.55.0",
+    "vue": "3.2.41",
+    "vue-disqus": "4.0.1",
+    "vue-tsc": "^1.0.9"
   }
 }

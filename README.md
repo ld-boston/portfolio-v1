@@ -1,3 +1,3 @@
-# L.D. Boston's portfolio
+# L.D. Boston's website
 
-## Made with Vue 3 + Typescript + Vite
+## Made with Nuxt 3

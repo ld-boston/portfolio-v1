@@ -1,15 +1,81 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { nextTick, onMounted, ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+let sidebarShown = ref(false)
+let toggleSidebar = () => (sidebarShown.value = !sidebarShown.value)
+
+const linksHighlightEl = ref<HTMLDivElement | null>(null)
+const router = useRouter()
+
+// onMounted(() => {
+//   router.afterEach(() => {
+//     sidebarShown.value = false
+//     setLinksHighlight()
+//   })
+//   setLinksHighlight()
+// })
+
+function setLinksHighlight() {
+  nextTick(() => {
+    if (!linksHighlightEl.value) return
+
+    let links = document.querySelector('header div.links')
+    if (!links) return
+    let linksBox = links.getBoundingClientRect()
+    let activeLinkBox = document
+      .querySelector('header .links a.router-link-exact-active')
+      ?.getBoundingClientRect()
+
+    if (!activeLinkBox) return
+
+    let left = activeLinkBox.left - linksBox.left
+    let width = activeLinkBox.width
+
+    left = left + 16 + width * 0.5
+    width = width - 32 - width * 0.5
+
+    linksHighlightEl.value.style.left = `${left}px`
+    linksHighlightEl.value.style.width = `${width}px`
+  })
+}
+</script>
 
 <template>
   <header>
     <div class="container py-3 md:py-2 lg:py-3 xl:py-4 flex align-items-center">
-      <router-link
-        :to="{ name: 'index' }"
+      <NuxtLink
+        to="/"
         class="header-logo f-alegreya f-medium f-24px md:f-32px xl:f-42px flex align-items-center"
       >
-        <Logo fill="#fff" />
+        <svg
+          enable-background="new 0 0 800 800"
+          version="1.1"
+          viewBox="0 0 800 800"
+          xml:space="preserve"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle fill="#A21016" cx="400" cy="400" r="387" />
+          <path
+            fill="#FFEDE6"
+            d="m214.1 308.8c0 14-5.5 26.8-16.6 38.5-11 11.7-24 17.6-38.9 17.6-15.8 0-29.2-6.3-40.2-18.9s-16.6-28.6-16.6-48c0-26.1 9.3-52.1 28-78 12.8-17.7 27.7-32.3 44.8-43.8 12.7-8.5 29.9-3.5 36.3 10.4l2.5 5.5c4.5 9.9 2.1 21.7-6.1 28.9-4.9 4.3-9.1 8.5-12.6 12.5l-0.2 0.2c-8.5 9.7-7.9 24.5 1.3 33.6 2.8 2.7 5.5 6 8 9.8 6.9 9.8 10.3 20.4 10.3 31.7z"
+          />
+          <path
+            fill="#FFEDE6"
+            d="m353.1 308.8c0 14-5.5 26.8-16.6 38.5-11 11.7-24 17.6-38.9 17.6-15.8 0-29.2-6.3-40.2-18.9s-16.6-28.6-16.6-48c0-26.1 9.3-52.1 28-78 12.8-17.7 27.7-32.3 44.8-43.8 12.7-8.5 29.9-3.5 36.3 10.4l2.5 5.5c4.5 9.9 2.1 21.7-6.1 28.9-4.9 4.3-9.1 8.5-12.6 12.5l-0.2 0.2c-8.5 9.7-7.9 24.5 1.3 33.6 2.8 2.7 5.5 6 8 9.8 6.9 9.8 10.3 20.4 10.3 31.7z"
+          />
+          <path
+            fill="#FFEDE6"
+            d="m588.6 504c0-14 5.5-26.8 16.6-38.5 11-11.7 24-17.6 38.9-17.6 15.8 0 29.2 6.3 40.2 18.9s16.6 28.6 16.6 48c0 26.1-9.3 52.1-28 78-12.9 17.8-27.9 32.4-44.9 43.9-12.7 8.5-29.9 3.5-36.3-10.4l-2.5-5.5c-4.5-9.9-2.1-21.7 6.1-28.9 4.9-4.3 9.1-8.5 12.6-12.5l0.2-0.2c8.5-9.7 7.9-24.5-1.3-33.6-2.8-2.7-5.5-6-8-9.8-6.8-9.9-10.2-20.5-10.2-31.8z"
+          />
+          <path
+            fill="#FFEDE6"
+            d="m446.6 504c0-14 5.5-26.8 16.6-38.5 11-11.7 24-17.6 38.9-17.6 15.8 0 29.2 6.3 40.2 18.9s16.6 28.6 16.6 48c0 26.1-9.3 52.1-28 78-12.9 17.8-27.9 32.4-44.9 43.9-12.7 8.5-29.9 3.5-36.3-10.4l-2.5-5.5c-4.5-9.9-2.1-21.7 6.1-28.9 4.9-4.3 9.1-8.5 12.6-12.5l0.2-0.2c8.5-9.7 7.9-24.5-1.3-33.6-2.8-2.7-5.5-6-8-9.8-6.8-9.9-10.2-20.5-10.2-31.8z"
+          />
+        </svg>
+
         <span class="ml-2 lg:ml-3">L.D. Boston</span>
-      </router-link>
+      </NuxtLink>
 
       <nav class="ml-auto nav-links" :class="{ show: sidebarShown }">
         <div class="mobile-nav head">
@@ -35,11 +101,11 @@
         </div>
 
         <div class="links" style="position: relative">
-          <router-link :to="{ name: 'index' }">Home</router-link>
-          <router-link :to="{ name: 'about-me' }">About me</router-link>
-          <router-link :to="{ name: 'books' }">Books</router-link>
-          <router-link :to="{ name: 'blog' }">Blog</router-link>
-          <router-link :to="{ name: 'contact' }">Contact</router-link>
+          <NuxtLink to="/">Home</NuxtLink>
+          <NuxtLink to="/about-me">About me</NuxtLink>
+          <NuxtLink to="/books">Books</NuxtLink>
+          <NuxtLink to="/blog">Blog</NuxtLink>
+          <NuxtLink to="/contact">Contact</NuxtLink>
           <div class="link-highlight" ref="linksHighlightEl"></div>
         </div>
 
@@ -110,51 +176,6 @@
   </header>
 </template>
 
-<script lang="ts" setup>
-import { nextTick, onMounted, ref } from 'vue';
-import { useRouter } from 'vue-router';
-
-import Logo from '@/assets/img/boston-logo.svg';
-
-let sidebarShown = ref(false);
-let toggleSidebar = () => (sidebarShown.value = !sidebarShown.value);
-
-const linksHighlightEl = ref<HTMLDivElement | null>(null);
-const router = useRouter();
-
-onMounted(() => {
-  router.afterEach(() => {
-    sidebarShown.value = false;
-    setLinksHighlight();
-  });
-  setLinksHighlight();
-});
-
-function setLinksHighlight() {
-  nextTick(() => {
-    if (!linksHighlightEl.value) return;
-
-    let links = document.querySelector('header div.links');
-    if (!links) return;
-    let linksBox = links.getBoundingClientRect();
-    let activeLinkBox = document
-      .querySelector('header .links a.router-link-exact-active')
-      ?.getBoundingClientRect();
-
-    if (!activeLinkBox) return;
-
-    let left = activeLinkBox.left - linksBox.left;
-    let width = activeLinkBox.width;
-
-    left = left + 16 + width * 0.5;
-    width = width - 32 - width * 0.5;
-
-    linksHighlightEl.value.style.left = `${left}px`;
-    linksHighlightEl.value.style.width = `${width}px`;
-  });
-}
-</script>
-
 <style lang="scss" scoped>
 header {
   position: sticky;
@@ -190,7 +211,7 @@ header {
     }
 
     @media screen and (max-width: $md) {
-      &.router-link-exact-active {
+      :deep(&.router-link-exact-active) {
         color: var(--primary);
       }
     }

@@ -3,23 +3,21 @@
 @import 'utils/buttons';
 @import 'utils/forms';
 
-html {
-  height: 100%;
-}
 body {
   @extend .f-lora;
   background-color: var(--dark);
   color: var(--light);
 
   overflow-x: hidden;
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
-  > #app {
+  > #__nuxt {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
 }
+
 main {
   flex-grow: 1;
   overflow-x: hidden;

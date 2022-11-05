@@ -1,3 +1,5 @@
+<script lang="ts" setup></script>
+
 <template>
   <div class="container">
     <div class="row my-3 md:py-4 lg:py-5">
@@ -17,12 +19,12 @@
           My life centers around creating entertaining stories and guiding
           others in writing theirs.
         </p>
-        <router-link
+        <NuxtLink
           class="btn btn-primary f-16px md:f-18px lg:f-20px xl:f-24px xl:py-4 xl:px-7 md:mt-3 xl:mt-4"
-          :to="{ name: 'books' }"
+          to="/books"
         >
           See my book
-        </router-link>
+        </NuxtLink>
       </div>
       <div
         class="md:col-6 text-center md:text-right order-0 md:order-1 xl:mt-3"
@@ -32,8 +34,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts" setup></script>
 
 <style lang="scss" scoped>
 .main-img {

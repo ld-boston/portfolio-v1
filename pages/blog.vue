@@ -1,6 +1,7 @@
 <template>
   <div class="container mt-8 text-center" style="max-width: 1000px">
-    <div v-if="loading" class="text-center mt-6">
+    {{ data }}
+    <!-- <div v-if="loading" class="text-center mt-6">
       <Spinner size="80" thickness="4" />
     </div>
     <div v-else-if="error">error ! {{ error }}</div>
@@ -19,24 +20,45 @@
           </div>
         </router-link>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue';
-import { getPosts } from '@/services/blog-posts';
+// import { onMounted, ref } from 'vue';
+// import { getPosts } from '@/services/blog-posts';
 
-let loading = ref(true);
-let error = ref(false);
-let posts = ref<any[]>([]);
+// let loading = ref(true);
+// let error = ref(false);
+// let posts = ref<any[]>([]);
 
-onMounted(async () => {
-  let res = await getPosts();
-  loading.value = false;
-  error.value = !res.success;
-  posts.value = res.posts.objects;
-});
+// onMounted(async () => {
+//   let res = await getPosts();
+//   loading.value = false;
+//   error.value = !res.success;
+//   posts.value = res.posts.objects;
+// });
+
+const { data } = useAsyncData('blog-posts', async () => {
+  let res
+  try {
+    res = await cosmicBucket.getObjects({
+      query: {
+        type: 'posts',
+      },
+      props: 'slug,title,content,metadata',
+    })
+  } catch (error) {
+    console.log(error)
+
+    return
+  }
+
+  return {
+    success: true,
+    posts: res.objects,
+  }
+})
 </script>
 
 <style lang="scss" scoped>
