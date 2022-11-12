@@ -1,9 +1,11 @@
 <script lang="ts" setup></script>
 
 <template>
-  <MainHeader />
-  <main>
-    <slot />
-  </main>
-  <footer></footer>
+  <div class="default-layout">
+    <MainHeader />
+    <main>
+      <slot />
+    </main>
+    <footer></footer>
+  </div>
 </template>
