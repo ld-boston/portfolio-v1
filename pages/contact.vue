@@ -1,4 +1,6 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+definePageMeta({ transitionIndex: 5 })
+</script>
 
 <template>
   <div class="container py-3">

@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+definePageMeta({ transitionIndex: 3 })
 let books = [
   {
     title: 'The Juncture',

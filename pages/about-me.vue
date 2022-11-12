@@ -1,4 +1,6 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+definePageMeta({ transitionIndex: 2 })
+</script>
 
 <template>
   <div class="container">

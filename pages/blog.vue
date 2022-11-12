@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+definePageMeta({ transitionIndex: 4 })
+
 const { data, pending, error } = useFetch('/api/posts')
 </script>
 
