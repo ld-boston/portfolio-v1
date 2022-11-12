@@ -18,5 +18,8 @@
     "vue": "3.2.41",
     "vue-disqus": "4.0.1",
     "vue-tsc": "^1.0.9"
+  },
+  "dependencies": {
+    "rss": "^1.2.2"
   }
 }
