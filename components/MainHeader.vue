@@ -153,12 +153,6 @@ function setLinksHighlight() {
 
 <style lang="scss" scoped>
 header {
-  position: sticky;
-  z-index: 1000;
-  top: 0;
-  background-color: rgba(#222, 0.5);
-  backdrop-filter: blur(12px);
-
   .container {
     @include media-breakpoint-down(md) {
       padding-top: 1rem !important;
