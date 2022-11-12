@@ -41,6 +41,12 @@ main {
 }
 
 // scrollbar
+html {
+  overflow: overlay;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--dark);
+}
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -50,9 +56,4 @@ main {
 }
 ::-webkit-scrollbar-thumb {
   background: var(--primary);
-}
-html {
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: var(--primary) var(--dark);
 }
