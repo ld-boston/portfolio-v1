@@ -12,6 +12,7 @@
   "devDependencies": {
     "@vueuse/core": "^9.4.0",
     "@vueuse/nuxt": "^9.4.0",
+    "cosmicjs": "4.2.10",
     "nuxt": "3.0.0-rc.11",
     "sass": "1.55.0",
     "vue": "3.2.41",
