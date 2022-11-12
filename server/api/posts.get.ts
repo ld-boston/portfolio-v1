@@ -6,7 +6,7 @@ export default defineEventHandler(async event => {
     query: {
       type: 'posts',
     },
-    props: 'slug,title,metadata',
+    props: 'slug,title,metadata.image,metadata.description',
   })
 
   return posts as PostsRes
