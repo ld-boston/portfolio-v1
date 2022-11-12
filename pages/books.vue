@@ -1,3 +1,54 @@
+<script lang="ts" setup>
+let books = [
+  {
+    title: 'The Juncture',
+    sub_title: 'A thriller story',
+    motto_left: 'When blood dries',
+    motto_right: "All that's left is regret",
+    link_amazon: '',
+    link_excerpt: 'https://www.test.com/except',
+    cover: '/img/books/Juncture.jpg',
+    body: `
+      <p>
+        <em>
+          The universe won't wait for you to fix it. In fact, you've
+          already fallen behind.
+        </em>
+      </p>
+      <p>
+        Bound, beaten, and defeated, ex-soldier and PhD researcher Dr
+        Scott suffers the consequences of plagiarising his fellow
+        professor's papers on time-travel theory, three years after the
+        fact. His captors: a militia of genetically-modified soldiers.
+        Their goal: to gain access to the technology he had developed
+        using the stolen research.
+      </p>
+      <p>
+        With no hope of escape, the situation is looking grim for Scott
+        when the facility he's being held in comes under siege by a group
+        masked individuals. Dr Scott broken free, they reveal themselves
+        to be soldiers from a dystopian America... Thirty years in the
+        future.
+      </p>
+      <p>
+        <strong>
+          “In nature there are neither rewards nor punishments; there are
+          consequences.”
+        </strong>
+        — Robert Green Ingersoll
+      </p>
+      <p>
+        Desperate and guilt-ridden, Dr Scott is brought onto a last-chance
+        mission to prevent the dystopian future to which his actions
+        served as a catalyst. With his knowledge, the fate of the world is
+        thrown into his hands, and the only way to save the future is
+        through the past.
+      </p>
+    `,
+  },
+]
+</script>
+
 <template>
   <div class="container py-3 lg:py-4">
     <div class="flex flex-column mx-auto" style="max-width: 1327px">
@@ -107,54 +158,3 @@
   }
 }
 </style>
-
-<script lang="ts" setup>
-let books = [
-  {
-    title: 'The Juncture',
-    sub_title: 'A thriller story',
-    motto_left: 'When blood dries',
-    motto_right: "All that's left is regret",
-    link_amazon: '',
-    link_excerpt: 'https://www.test.com/except',
-    cover: '/img/books/Juncture.jpg',
-    body: `
-      <p>
-        <em>
-          The universe won't wait for you to fix it. In fact, you've
-          already fallen behind.
-        </em>
-      </p>
-      <p>
-        Bound, beaten, and defeated, ex-soldier and PhD researcher Dr
-        Scott suffers the consequences of plagiarising his fellow
-        professor's papers on time-travel theory, three years after the
-        fact. His captors: a militia of genetically-modified soldiers.
-        Their goal: to gain access to the technology he had developed
-        using the stolen research.
-      </p>
-      <p>
-        With no hope of escape, the situation is looking grim for Scott
-        when the facility he's being held in comes under siege by a group
-        masked individuals. Dr Scott broken free, they reveal themselves
-        to be soldiers from a dystopian America... Thirty years in the
-        future.
-      </p>
-      <p>
-        <strong>
-          “In nature there are neither rewards nor punishments; there are
-          consequences.”
-        </strong>
-        — Robert Green Ingersoll
-      </p>
-      <p>
-        Desperate and guilt-ridden, Dr Scott is brought onto a last-chance
-        mission to prevent the dystopian future to which his actions
-        served as a catalyst. With his knowledge, the fate of the world is
-        thrown into his hands, and the only way to save the future is
-        through the past.
-      </p>
-    `,
-  },
-];
-</script>

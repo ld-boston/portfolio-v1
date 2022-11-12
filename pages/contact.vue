@@ -1,3 +1,5 @@
+<script lang="ts" setup></script>
+
 <template>
   <div class="container py-3">
     <div class="row">
@@ -153,5 +155,3 @@ textarea {
   }
 }
 </style>
-
-<script lang="ts" setup></script>

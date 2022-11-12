@@ -1,3 +1,5 @@
+<script lang="ts" setup></script>
+
 <template>
   <div class="container">
     <div class="row g-3 py-3 md:pt-3 lg:pt-4 relative">
