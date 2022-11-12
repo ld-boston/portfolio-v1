@@ -2,6 +2,8 @@
 
 <template>
   <div class="container">
+    <MetaTitle content="L.D. Boston - About Me" />
+
     <div class="row g-3 py-3 md:pt-3 lg:pt-4 relative">
       <div class="col-12 md:col-6 align-self-center pt-4 md:pt-0">
         <div class="avatar-img box">

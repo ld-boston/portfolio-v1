@@ -51,6 +51,8 @@ let books = [
 
 <template>
   <div class="container py-3 lg:py-4">
+    <MetaTitle content="L.D. Boston - Books" />
+
     <div class="flex flex-column mx-auto" style="max-width: 1327px">
       <div class="flex book" v-for="book in books" :key="book.title">
         <div

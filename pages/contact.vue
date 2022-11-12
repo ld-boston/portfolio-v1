@@ -2,6 +2,8 @@
 
 <template>
   <div class="container py-3">
+    <MetaTitle content="L.D. Boston - Contact" />
+
     <div class="row">
       <div class="col-12 md:mb-3 xl:mb-5">
         <h1 class="f-alegreya f-bold op-80 m-0">Let's get in touch</h1>
