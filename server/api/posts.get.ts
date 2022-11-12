@@ -1,12 +1,12 @@
 import { bucket } from '@/server/cosmic'
 import { BlogType } from '~~/services/types/blog'
 
-export default defineEventHandler(async ({ req }) => {
+export default defineEventHandler(async event => {
   let posts = await bucket.getObjects({
     query: {
       type: 'posts',
     },
-    props: 'slug,title,content,metadata',
+    props: 'slug,title,metadata',
   })
 
   return posts as PostsRes
