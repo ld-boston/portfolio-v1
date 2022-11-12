@@ -1,4 +1,25 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const router = useRouter()
+
+router.beforeEach((to, from) => {
+  if (typeof to.meta.pageTransition == 'boolean') return
+
+  to.meta.pageTransition = from.meta.pageTransition = {
+    name: 'fade',
+    mode: 'out-in',
+  }
+
+  if (!to.meta.transitionIndex || !from.meta.transitionIndex) return
+  to.meta.pageTransition.name =
+    to.meta.transitionIndex > from.meta.transitionIndex
+      ? 'slide-right'
+      : 'slide-left'
+  from.meta.pageTransition.name =
+    to.meta.transitionIndex > from.meta.transitionIndex
+      ? 'slide-left'
+      : 'slide-right'
+})
+</script>
 
 <template>
   <Html lang="en" />
