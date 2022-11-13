@@ -179,9 +179,11 @@ header {
       font-size: 23px;
     }
 
-    @media screen and (max-width: $md) {
-      :deep(&.router-link-exact-active) {
-        color: var(--primary);
+    :deep() {
+      @media screen and (max-width: $md) {
+        &.router-link-exact-active {
+          color: var(--primary);
+        }
       }
     }
   }
